@@ -1,6 +1,10 @@
 <svg id="main">
   <rect id="background" />
-  <text id="vanity" class="colour-deepOrange">TOOP</text>
+  <text id="vanity" class="colour-secondary">TOOP</text>
+  <svg class="heart-container">
+    <text id="heart-rate" class="colour-secondary" />
+    <image id="heart-rate-img" class="colour-secondary" href="images/stat_hr_solid_24px.png"/>
+  </svg>
   <svg class="steps-container">
     <text id="steps" class="colour-secondary" />
     <image id="steps-img" class="colour-secondary" href="images/stat_steps_solid_24px.png"/>

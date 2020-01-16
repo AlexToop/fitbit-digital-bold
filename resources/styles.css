@@ -4,25 +4,12 @@
     fill: #000000;
 }
 
-
-.colour-background-duplicate {
-    fill: #2A363B;
-}
-
 .colour-deepOrange {
     fill: #F64C11;
 }
 
-.colour-sky {
-    fill: #007BBF;
-}
-
 .colour-secondary {
     fill: #FECEA8;
-}
-
-.colour-third {
-    fill: #00606D;
 }
 
 #hours {
@@ -84,7 +71,7 @@
     text-length: 60;
     text-anchor: middle;
     x: 22%;
-    y: 55%;
+    y: 53%;
 }
 
 #steps-img {
@@ -99,7 +86,7 @@
     font-family: Colfax-Medium;
     text-length: 32;
     text-anchor: middle;
-    x: 24%;
+    x: 23%;
     y: 70%;
 }
 
@@ -107,5 +94,21 @@
     width: 22;
     height: 22;
     x: $+2;
+    y: $-48;
+}
+
+#heart-rate {
+    font-size: 23;
+    font-family: Colfax-Medium;
+    text-length: 60;
+    text-anchor: middle;
+    x: 23%;
+    y: 37%;
+}
+
+#heart-rate-img {
+    width: 24;
+    height: 24;
+    x: $+5;
     y: $-48;
 }

@@ -6,6 +6,7 @@ import * as weather from '../fitbit-weather/app';
 import {display} from "display";
 import {battery} from "power";
 import {today} from 'user-activity';
+import {HeartRateSensor} from "heart-rate";
 import * as messaging from "messaging";
 
 const hoursElem = document.getElementById('hours');
@@ -13,6 +14,7 @@ const minutesElem = document.getElementById('minutes');
 const vanityElem = document.getElementById('vanity');
 const dateElem = document.getElementById("date");
 
+const heartRate = document.getElementById("heart-rate");
 const main = document.getElementById("main");
 const batteryMeasure = document.getElementById("battery-measure");
 const weatherElement = document.getElementById("weather");
@@ -30,10 +32,8 @@ clock.ontick = (evt) => {
     let date = evt.date;
     let hours = date.getHours();
     if (preferences.clockDisplay === "12h") {
-        // 12h format
         hours = hours % 12 || 12;
     } else {
-        // 24h format
         hours = util.zeroPad(hours);
     }
     let mins = util.zeroPad(date.getMinutes());
@@ -48,21 +48,26 @@ clock.ontick = (evt) => {
     updateActivity(today);
 };
 
+if (HeartRateSensor) {
+    const hrm = new HeartRateSensor({frequency: 1});
+    heartRate.text = "NA";
+    hrm.addEventListener("reading", () => {
+        heartRate.text = hrm.heartRate + "";
+    });
+    sensors.push(hrm);
+    hrm.start();
+}
 
 display.addEventListener("change", () => {
     if (display.on) {
-        // Have sensors running when screen is on.
         sensors.map(sensor => sensor.start());
         setWeather(weather);
         updateBattery(battery);
     } else {
-        // Have sensors off when screen is off.
         sensors.map(sensor => sensor.stop());
     }
 });
 
-
-// Message is received
 messaging.peerSocket.onmessage = evt => {
     if (evt.data.key === "textColour" && evt.data.newValue) {
         let color = JSON.parse(evt.data.newValue);
@@ -83,9 +88,9 @@ messaging.peerSocket.onmessage = evt => {
         batteryImage.style.fill = color;
         stepsImage.style.fill = color;
         weatherIcon.style.fill = color;
+        heartRate.style.fill = color;
     }
-};
-
+}
 
 function setWeather(weather) {
     weather = util.getWeatherUpdate(weather);
@@ -93,12 +98,10 @@ function setWeather(weather) {
     weatherIcon.href = "images/weather-icon-" + util.getWeatherConditionCode(weather) + ".png";
 }
 
-
 function updateBattery(battery) {
     batteryMeasure.text = battery.chargeLevel;
 }
 
-
 function updateActivity(today) {
-    steps.text = today.adjusted.steps + "";
+    steps.text = today.adjusted.steps;
 }
