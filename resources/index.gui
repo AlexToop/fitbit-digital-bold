@@ -1,32 +1,22 @@
 <svg id="main">
   <rect id="background" />
-  
-  <!-- Top section -->
-  <svg class="battery-container">
-    <text id="battery-measure" class="colour-secondary" />
-    <image id="charge-img" class="colour-secondary" width="22" height="22" x="$+2" y="$-48" href="images/stat_am_solid_24px.png"/>
-  </svg>
-  
+  <text id="vanity" class="colour-deepOrange">TOOP</text>
   <svg class="steps-container">
     <text id="steps" class="colour-secondary" />
-    <image id="steps-img" class="colour-secondary" width="24" height="24" x="$+4" y="$-48" href="images/stat_steps_solid_24px.png"/>
+    <image id="steps-img" class="colour-secondary" href="images/stat_steps_solid_24px.png"/>
+  </svg>
+  <svg class="battery-container">
+    <text id="battery-measure" class="colour-secondary" />
+    <image id="battery-img" class="colour-secondary" href="images/stat_am_solid_24px.png"/>
+  </svg>
+  <svg class="weather">
+    <image id="weather-icon" class="colour-secondary" href=""/>
+    <text id="weather" class="colour-secondary"/>
   </svg>
   
-  <svg class="heart-container">
-    <text id="heart-rate" class="colour-secondary" />
-    <image id="heart-rate-img" class="colour-secondary" width="24" height="24" x="$+5" y="$-48" href="images/stat_hr_solid_24px.png"/>
+  <svg class="timeContainer">
+    <text id="hours" class="colour-deepOrange" pointer-events="visible" />
+    <text id="minutes" class="colour-deepOrange" pointer-events="visible" />
   </svg>
-  
-
-  <!-- Main cascade -->
-  <text id="time" class="colour-deepOrange" pointer-events="visible" />
-  
   <text id="date" class="colour-deepOrange" pointer-events="visible" />
-
-  <image id="weather-icon" class="colour-secondary" width="52" height="52" x="32%" y="64%" href=""/>
-  <text id="weather" class="colour-secondary"/>
-  
-   <!-- Bottom section -->
-  <text id="location" class="colour-secondary" class="colour-secondary" width="250" height="45" x="50%" y="97%"/>
-  
 </svg>

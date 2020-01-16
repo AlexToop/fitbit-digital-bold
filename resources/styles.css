@@ -17,13 +17,6 @@
     fill: #007BBF;
 }
 
-#location {
-    font-size: 23;
-    font-family: Colfax-Medium;
-    text-length: 80;
-    text-anchor: middle;
-}
-
 .colour-secondary {
     fill: #FECEA8;
 }
@@ -32,44 +25,22 @@
     fill: #00606D;
 }
 
-
-#battery-measure {
-    font-size: 23;
-    font-family: Colfax-Medium;
+#hours {
+    font-size: 110;
+    font-family: Colfax-Regular;
     text-length: 32;
     text-anchor: middle;
-    x: 9%;
-    y: 9%;
+    x: 72%;
+    y: 36%;
 }
 
-
-#steps {
-    font-size: 23;
-    font-family: Colfax-Medium;
-    text-length: 60;
-    text-anchor: middle;
-    x: 46%;
-    y: 9%;
-}
-
-
-#heart-rate {
-    font-size: 23;
-    font-family: Colfax-Medium;
-    text-length: 60;
-    text-anchor: middle;
-    x: 82%;
-    y: 9%;
-}
-
-
-#time {
-    font-size: 100;
-    font-family: Colfax-Medium;
+#minutes {
+    font-size: 110;
+    font-family: Colfax-Regular;
     text-length: 32;
     text-anchor: middle;
-    x: 50%;
-    y: 63%;
+    x: 72%;
+    y: 88%;
 }
 
 
@@ -78,9 +49,24 @@
     font-family: Colfax-Regular;
     text-length: 32;
     text-anchor: middle;
-    x: 50%;
-    y: 35%;
+    x: 73%;
+    y: 54%;
+}
 
+#vanity {
+    font-size: 37;
+    font-family: Colfax-Regular;
+    text-length: 32;
+    text-anchor: middle;
+    x: 27%;
+    y: 20%;
+}
+
+#weather-icon {
+    width: 52;
+    height: 52;
+    x: 10%;
+    y: 75%;
 }
 
 #weather {
@@ -88,6 +74,38 @@
     font-family: Colfax-Regular;
     text-length: 60;
     text-anchor: middle;
-    x: 58%;
-    y: 77%;
+    x: $+8%;
+    y: $-4%;
+}
+
+#steps {
+    font-size: 23;
+    font-family: Colfax-Medium;
+    text-length: 60;
+    text-anchor: middle;
+    x: 22%;
+    y: 55%;
+}
+
+#steps-img {
+    width: 24;
+    height: 24; 
+    x: $+4; 
+    y: $-48;
+}
+
+#battery-measure {
+    font-size: 23;
+    font-family: Colfax-Medium;
+    text-length: 32;
+    text-anchor: middle;
+    x: 24%;
+    y: 70%;
+}
+
+#battery-img {
+    width: 22;
+    height: 22;
+    x: $+2;
+    y: $-48;
 }
